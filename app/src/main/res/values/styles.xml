@@ -1,0 +1,35 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <!-- Base application theme. -->
+    <style name="lbl_style" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textSize">@dimen/activity_detail_lbl_size</item>
+        <item name="android:alpha">0.6</item>
+        <item name="android:fontFamily">"sense-serif-medium"</item>
+    </style>
+
+    <!-- Base application theme. -->
+    <style name="value_style" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textSize">@dimen/activity_detail_lbl_size</item>
+        <item name="android:alpha">0.8</item>
+        <item name="android:fontFamily">"sense-serif"</item>
+    </style>
+
+    <!-- Base application theme. -->
+    <style name="desc_style" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textSize">@dimen/activity_detail_lbl_size</item>
+        <item name="android:alpha">0.54</item>
+        <item name="android:fontFamily">"sense-serif"</item>
+    </style>
+</resources>

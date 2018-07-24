@@ -1,0 +1,490 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <!-- Header -->
+   <RelativeLayout
+       android:id="@+id/header"
+       android:layout_width="match_parent"
+       android:layout_height="50dp"
+       android:background="#002e8e"
+       android:layout_alignParentTop="true"
+       >
+
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="Container Detail"
+           android:textSize="@dimen/activity_detail_heading1_size"
+           android:layout_centerVertical="true"
+           android:layout_marginLeft="18dp"
+           android:layout_alignParentLeft="true"
+           android:textColor="#FFFFFF"
+           android:layout_marginTop="17dp"
+           android:fontFamily="Roboto-medium"
+           />
+
+       <ImageButton
+           android:id="@+id/ivDispose"
+           android:layout_height="wrap_content"
+           android:layout_width="wrap_content"
+           android:layout_gravity="left"
+           android:layout_centerVertical="true"
+           android:src="@drawable/dispose"
+           android:background="?android:attr/selectableItemBackground"
+           android:clickable="true"
+           android:layout_marginRight="5dp"
+           android:padding="10dp"
+           android:layout_toLeftOf="@+id/save"
+           />
+
+       <ImageButton
+           android:id="@+id/save"
+           android:layout_height="wrap_content"
+           android:layout_width="wrap_content"
+           android:layout_gravity="left"
+           android:layout_centerVertical="true"
+           android:layout_alignParentRight="true"
+           android:src="@drawable/save"
+           android:clickable="true"
+           android:padding="10dp"
+           android:background="?android:attr/selectableItemBackground"
+           android:layout_marginRight="10dp"
+           />
+
+   </RelativeLayout>
+
+
+
+
+
+    <ScrollView
+        android:layout_below="@+id/header"
+        android:layout_above="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollview">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvDispose"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@color/yellow"
+            android:text="CONTAINER DISPOSED"
+            android:textColor="@color/red"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:visibility="gone"/>
+
+            <!-- Content -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/header"
+                android:orientation="vertical"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin">
+
+
+                <!-- Container ID -->
+                <LinearLayout
+                    android:weightSum="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical">
+                    >
+
+
+                    <TextView
+                        android:id="@+id/lbl_ContainerID"
+                        android:layout_weight="0.4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Container :"
+                        android:textSize="@dimen/activity_detail_heading2_size"/>
+
+                    <TextView
+                        android:id="@+id/val_ContainerID"
+                        android:layout_weight="0.6"
+                        android:layout_height="wrap_content"
+                        android:layout_width="0dp"
+                        android:textSize="@dimen/activity_detail_heading2_size"/>
+                </LinearLayout>
+
+
+                <!-- Substance -->
+                <LinearLayout
+                    android:weightSum="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/activity_vertical_margin_for_detail_section"
+
+                    android:gravity="center_vertical">
+                    >
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="@dimen/icon_lbl_horizontal_margin"
+                        android:src="@drawable/substance_id"/>
+
+                    <TextView
+                        android:id="@+id/lbl_Substance"
+                        android:layout_weight="0.4"
+                        android:layout_height="wrap_content"
+                        android:layout_width="0dp"
+                        android:text="Substance :"
+                        style="@style/lbl_style"/>
+
+                    <TextView
+                        android:id="@+id/val_substance"
+                        android:layout_weight="0.6"
+                        android:layout_height="wrap_content"
+                        android:layout_width="0dp"
+                        style="@style/value_style"
+                        android:paddingLeft="@dimen/txt_padding"
+
+                        />
+
+                </LinearLayout>
+
+                <!-- Location ID -->
+                <LinearLayout
+                    android:weightSum="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/lbl_vertical_margin"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="@dimen/icon_lbl_horizontal_margin"
+                        android:src="@drawable/location_id"/>
+
+                    <TextView
+                        android:id="@+id/lbl_LocationID"
+                        android:layout_weight="0.4"
+                        android:layout_height="wrap_content"
+                        android:layout_width="0dp"
+                        android:text="Location :"
+                        style="@style/lbl_style"/>
+
+                    <Spinner
+                        android:id="@+id/spinner_Location"
+                        android:layout_height="wrap_content"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.6"
+                        android:spinnerMode="dialog"
+                        android:gravity="right"
+
+                        />
+                </LinearLayout>
+
+                <!-- Size -->
+                <LinearLayout
+                    android:weightSum="1"
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/lbl_vertical_margin"
+
+                    android:layout_gravity="center_vertical"
+                    >
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="@dimen/icon_lbl_horizontal_margin"
+                        android:src="@drawable/size"/>
+
+                    <TextView
+                        android:id="@+id/lbl_Size"
+                        android:layout_weight="0.4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Size :"
+                        style="@style/lbl_style"/>
+
+                    <TextView
+                        android:id="@+id/val_Size"
+                        android:layout_weight="0.6"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        style="@style/value_style"
+                        android:paddingLeft="5dp"
+                        />
+
+                </LinearLayout>
+
+                <!--&lt;!&ndash; UOM &ndash;&gt;
+                <LinearLayout
+                    android:weightSum="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/lbl_vertical_margin"
+                    android:layout_gravity="center_vertical"
+                    >
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="@dimen/icon_lbl_horizontal_margin"
+                        android:src="@drawable/uom"/>
+
+                    <TextView
+                        android:id="@+id/lbl_UOM"
+                        android:layout_weight="0.4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="UOM :"
+                        style="@style/lbl_style"/>
+
+                    <TextView
+                        android:id="@+id/val_UOM"
+                        android:layout_weight="0.6"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        style="@style/value_style"
+                        android:paddingLeft="@dimen/txt_padding"
+
+                        />
+
+                </LinearLayout>-->
+
+                <!-- CAS -->
+                <LinearLayout
+                    android:weightSum="1"
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/lbl_vertical_margin"
+
+                    android:layout_gravity="center_vertical"
+                    >
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="@dimen/icon_lbl_horizontal_margin"
+                        android:src="@drawable/cas"/>
+
+                    <TextView
+                        android:id="@+id/lbl_CAS"
+                        android:layout_weight="0.4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="CAS :"
+                        style="@style/lbl_style"/>
+
+                    <TextView
+                        android:id="@+id/val_CAS"
+                        android:layout_weight="0.6"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        style="@style/value_style"
+                        android:paddingLeft="@dimen/txt_padding"
+
+                        />
+
+                </LinearLayout>
+
+                <!-- Supplier -->
+                <LinearLayout
+                    android:weightSum="1"
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/lbl_vertical_margin"
+
+                    android:layout_gravity="center_vertical"
+                    >
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="@dimen/icon_lbl_horizontal_margin"
+                        android:src="@drawable/supplier"/>
+
+                    <TextView
+                        android:id="@+id/lbl_Supplier"
+                        android:layout_weight="0.4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Supplier :"
+                        style="@style/lbl_style"/>
+
+                    <TextView
+                        android:id="@+id/val_Supplier"
+                        android:layout_weight="0.6"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        style="@style/value_style"
+                        android:paddingLeft="@dimen/txt_padding"
+
+                        />
+
+                </LinearLayout>
+
+                <!-- Catalog No-->
+                <LinearLayout
+                    android:weightSum="1"
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/lbl_vertical_margin"
+
+                    android:layout_gravity="center_vertical"
+                    >
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="@dimen/icon_lbl_horizontal_margin"
+                        android:src="@drawable/catalog_no"/>
+
+                    <TextView
+                        android:id="@+id/lbl_CatalogNo"
+                        android:layout_weight="0.4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Catalog No :"
+                        style="@style/lbl_style"/>
+
+                    <TextView
+                        android:id="@+id/val_CatalogNo"
+                        android:layout_weight="0.6"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        style="@style/value_style"
+                        android:paddingLeft="@dimen/txt_padding"
+
+                        />
+                </LinearLayout>
+
+                <!-- Lot No -->
+                <LinearLayout
+                    android:weightSum="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/lbl_vertical_margin"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/imageView"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="@dimen/icon_lbl_horizontal_margin"
+                        android:src="@drawable/uid"/>
+
+                    <TextView
+                        android:id="@+id/lbl_LotNo"
+                        android:layout_weight="0.4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Lot No :"
+                        style="@style/lbl_style"/>
+
+                    <TextView
+                        android:id="@+id/val_LotNo"
+                        android:layout_weight="0.6"
+                        android:layout_height="wrap_content"
+                        android:layout_width="0dp"
+                        android:paddingLeft="4dp"
+                        style="@style/value_style"
+                        />
+                </LinearLayout>
+
+                <!-- Expiration Date-->
+                <LinearLayout
+                    android:weightSum="1"
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/lbl_vertical_margin"
+
+                    android:layout_gravity="center_vertical"
+                    >
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="@dimen/icon_lbl_horizontal_margin"
+                        android:src="@drawable/expiration_date"/>
+
+                    <TextView
+                        android:id="@+id/lbl_ExpirationDate"
+                        android:layout_weight="0.4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Expiration Date :"
+                        style="@style/lbl_style"/>
+
+                    <TextView
+                        android:id="@+id/val_ExpirationDate"
+                        android:layout_weight="0.6"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        style="@style/value_style"
+                        android:paddingLeft="8dp"
+                        android:paddingBottom="5dp"
+                        android:drawableRight="@drawable/date"
+
+                        />
+                </LinearLayout>
+
+
+                <TextView
+                    android:layout_alignParentBottom="true"
+                    android:id="@+id/val_Description"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    style="@style/desc_style"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+    <!--Footer -->
+    <RelativeLayout
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        >
+
+        <Button
+            android:id="@+id/btnScan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border"
+            android:text="@string/btn_scan"
+            android:textSize="@dimen/activity_text_size_btnScan"
+            android:onClick="onClick"
+            android:textColor="@android:color/white"
+
+            />
+
+
+    </RelativeLayout>
+</RelativeLayout>

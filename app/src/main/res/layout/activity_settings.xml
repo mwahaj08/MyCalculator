@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Header -->
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#002e8e"
+        android:layout_alignParentTop="true"
+        >
+
+
+        <ImageButton
+            android:id="@+id/back"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_gravity="left"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/back"
+            android:background="?android:attr/selectableItemBackground"
+            android:layout_marginLeft="7dp"
+            android:padding="10dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Settings"
+            android:textSize="@dimen/activity_detail_heading1_size"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="18dp"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="17dp"
+            android:fontFamily="Roboto-medium"
+            android:layout_toRightOf="@+id/back"
+            />
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/activity_vertical_margin"
+        android:layout_below="@+id/header"
+        android:orientation="vertical">
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/etServerURL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="SERVER URL"
+                android:background="@null"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:singleLine="true"
+                android:textSize="17sp"
+                android:imeOptions="actionDone"
+                android:nextFocusDown="@+id/swDispose"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/zxing_custom_result_view"
+            android:alpha="0.10"/>
+
+        <android.support.v7.widget.SwitchCompat
+            android:id="@+id/swDispose"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Enable Dispose"
+            android:textSize="17sp"
+            android:gravity="center_vertical"
+            android:clickable="true"
+            android:background="?android:attr/selectableItemBackground"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/zxing_custom_result_view"
+            android:alpha="0.10"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SCAN ENGINE"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            android:alpha="0.80"
+            android:layout_marginTop="35dp"
+            android:layout_marginBottom="5dp"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/zxing_custom_result_view"
+            android:alpha="0.10"/>
+
+        <RadioGroup
+            android:id="@+id/rgScanner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <android.support.v7.widget.AppCompatRadioButton
+                android:id="@+id/zxing"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Zxing"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/zxing_custom_result_view"
+                android:alpha="0.10"/>
+
+            <android.support.v7.widget.AppCompatRadioButton
+                android:id="@+id/scandit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Scandit"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/zxing_custom_result_view"
+                android:alpha="0.10"/>
+        </RadioGroup>
+
+    </LinearLayout>
+
+
+</RelativeLayout>
